@@ -80,13 +80,15 @@ header{
     height: 440px;
     background: transparent;
     backdrop-filter: blur(20px);
-    border: 1px solid lightblue;
+    border: 1px solid rgb(189, 191, 192);
     border-radius: 20px;
-    box-shadow: 0 0 15px rgb(0, 0, 0);
+    box-shadow: 0 0 15px rgb(44, 40, 40);
+    transform: scale(0);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 0.4s ease;
 }
 .wrapper form-box{
     width: 100%;
@@ -95,28 +97,115 @@ header{
 .form-box h2{
     text-align: center;
     font-size:2em;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 .input-box{
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 1px black solid;
-    margin: 30px;
-
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    margin: 30px 0;
 }
 .input-box label{
-    position: absolute;
+    position:absolute;
+    left: 5px;
     top:50%;
-    left: 0px;
-    transform:translateX(-50%);
-    font-size:1em;
-    color:black;
-    font-weight: 500;
+    transform: translateY(-50%);
+    font-size: 1rem;
     pointer-events: none;
+    font-weight: normal;
+    color: white;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label, .input-box input:valid~label{
+    top:-5px;
 }
 .input-box input{
     width: 100%;
-    height:100%;
-    background: transparent;
+    height: 100%;
+    outline: none;
     border: none;
+    background: transparent;
+    color: white;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size:1.2em;
+    color:white;
+    line-height: 57px;
+}
+.remember-forgot{
+    color:white;
+    font-size:0.9rem;
+    margin: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot a{
+    color:white;
+    text-decoration: none;
+}
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.login-btn{
+    width:100%;
+    height:45px;
+    border-radius: 6px;
+    outline: none;
+    border: 2px white solid;
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+.login-btn:hover{
+    background: transparent;
+    color: white;
+    transition: 0.2s;
+    border: 2px white solid;
+}
+.login-register{
+    text-align: center;
+    margin: 15px 0px 15px 0px;
+    color: white;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-register a{
+    text-decoration: none;
+    color: white;
+    font-weight:bold;
+    font-size: 1em;
+}
+.login-register a:hover{
+    text-decoration: underline;
+}
+#cancel-icon-div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+    width: 100%;
+}
+#cancel-icon{
+    font-size:2em;
+    color:white; 
+    cursor: pointer; 
+    margin-top:-15px; 
+}
+#cancel-icon:hover{
+    color:rgb(216, 197, 197);
 }
