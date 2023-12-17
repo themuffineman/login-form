@@ -168,12 +168,15 @@ header{
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
 }
 .login-btn:hover{
     background: transparent;
     color: white;
-    transition: 0.2s;
     border: 2px white solid;
+}
+.login-btn:active{
+    transform: translateY(5px);
 }
 .login-register{
     text-align: center;
